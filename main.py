@@ -36,7 +36,7 @@ st.title("Аудио")
 #print(summary)
 
 processor = AutoProcessor.from_pretrained("suno/bark-small",use_fast=False)
-model = AutoModel.from_pretrained("suno/bark-small",use_fast=False)
+model = AutoModel.from_pretrained("suno/bark-small")
 
 inputs = processor(
     text=summary,
