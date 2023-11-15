@@ -9,7 +9,7 @@ article_text=st.text_input('Введите текст и нажмите Enter')
 
 model_name = "csebuetnlp/mT5_multilingual_XLSum"
 tokenizer = AutoTokenizer.from_pretrained(model_name,legacy=False)
-model = AutoModelForSeq2SeqLM.from_pretrained(model_name,use_fast=False)
+model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
 input_ids = tokenizer(
     [WHITESPACE_HANDLER(article_text)],
@@ -36,7 +36,7 @@ st.title("Аудио")
 #print(summary)
 
 processor = AutoProcessor.from_pretrained("suno/bark-small",use_fast=False)
-model = AutoModel.from_pretrained("suno/bark-small")
+model = AutoModel.from_pretrained("suno/bark-small",use_fast=False)
 
 inputs = processor(
     text=summary,
